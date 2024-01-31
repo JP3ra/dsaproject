@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marks Page</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>Marks Page</h1>
+    <b>Name: </b><%= marks.length > 0 ? marks[0].name : '' %>
+    <table>
+        <thead>
+            <tr>
+                <th>Subject</th>
+                <th>Credits</th>
+                <th>CIE</th>
+                <th>SEE</th>
+            </tr>
+        </thead>
+        <tbody id="marksTableBody">
+            <% marks.forEach(function(mark) { %>
+                <tr>
+                    <td><%= mark.subject %></td>
+                    <td><%= mark.credits %></td>
+                    <td><%= mark.cie %></td>
+                    <td><%= mark.see %></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+</body>
+</html>
